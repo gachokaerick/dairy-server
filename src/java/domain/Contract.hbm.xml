@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 20, 2018 11:40:07 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="domain.Contract" table="Contract" catalog="dairy" optimistic-lock="version">
+        <id name="contractId" type="java.lang.Integer">
+            <column name="contractId" />
+            <generator class="identity" />
+        </id>
+        <property name="supplierId" type="int">
+            <column name="supplierId" not-null="true" />
+        </property>
+        <property name="startDate" type="string">
+            <column name="startDate" length="10" not-null="true" />
+        </property>
+        <property name="endDate" type="string">
+            <column name="endDate" length="10" not-null="true" />
+        </property>
+        <property name="amountPerDay" type="float">
+            <column name="amountPerDay" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="unitCost" type="float">
+            <column name="unitCost" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="8" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
